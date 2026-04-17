@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c75bc6cd.css",
+    "main.js": "/static/js/main.6e130e6c.js",
+    "static/media/seattle-skyline.jpg": "/static/media/seattle-skyline.f39e134d7df68aae2aba.jpg",
+    "static/media/image.jpg": "/static/media/image.175fb34f8e3cde0fb433.jpg",
+    "index.html": "/index.html",
+    "main.c75bc6cd.css.map": "/static/css/main.c75bc6cd.css.map",
+    "main.6e130e6c.js.map": "/static/js/main.6e130e6c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c75bc6cd.css",
+    "static/js/main.6e130e6c.js"
+  ]
+}
