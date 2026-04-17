@@ -13,24 +13,61 @@ export default function Portfolio() {
       <section className="hero">
         <div className="hero-copy">
           <p className="eyebrow">
-            Available for senior front-end opportunities
+            <b>Available for senior front-end opportunities</b>
           </p>
           <h1>{profile.name}</h1>
-          <p className="hero-title">{profile.title}</p>
+          <p className="hero-title">
+            <b>{profile.title}</b>
+          </p>
           <p className="hero-summary">{profile.summary}</p>
 
-          <div className="hero-actions">
-            <a href={profile.linkedin} target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
-            <a href={`mailto:${profile.email}`}>Email</a>
+          <div className="hero-contact-card">
+            <div className="hero-contact-list">
+              <div className="hero-contact-item">
+                <span className="hero-contact-icon">📍</span>
+                <span>{profile.location}</span>
+              </div>
+
+              <div className="hero-contact-item">
+                <span className="hero-contact-icon">✉️</span>
+                <a href={`mailto:${profile.email}`}>{profile.email}</a>
+              </div>
+
+              <div className="hero-contact-item">
+                <span className="hero-contact-icon">📞</span>
+                <a href={`tel:${profile.phone.replace(/\D/g, "")}`}>
+                  {profile.phone}
+                </a>
+              </div>
+            </div>
+
+            <div className="hero-contact-actions">
+              <a
+                className="hero-btn hero-btn-primary"
+                href={profile.linkedin}
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn
+              </a>
+
+              <a
+                className="hero-btn hero-btn-secondary"
+                href={`mailto:${profile.email}`}
+              >
+                Email Me
+              </a>
+            </div>
           </div>
 
-          <ul className="meta-list">
-            <li>{profile.location}</li>
-            <li>{profile.email}</li>
-            <li>{profile.phone}</li>
-          </ul>
+          <div className="highlights-grid">
+            {highlights.map((item) => (
+              <article key={item.label} className="highlight-card">
+                <strong>{item.value}</strong>
+                <span>{item.label}</span>
+              </article>
+            ))}
+          </div>
         </div>
 
         <aside className="hero-panel">
@@ -49,15 +86,6 @@ export default function Portfolio() {
                 <li key={item}>{item}</li>
               ))}
             </ul>
-          </div>
-
-          <div className="highlights-grid">
-            {highlights.map((item) => (
-              <article key={item.label} className="highlight-card">
-                <strong>{item.value}</strong>
-                <span>{item.label}</span>
-              </article>
-            ))}
           </div>
         </aside>
       </section>
@@ -129,7 +157,7 @@ export default function Portfolio() {
 
               <div className="pill-row">
                 {job.stack.map((item) => (
-                  <span key={item} className="pill pill-muted">
+                  <span key={item} className="pill ">
                     {item}
                   </span>
                 ))}
